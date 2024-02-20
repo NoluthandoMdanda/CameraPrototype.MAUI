@@ -34,18 +34,6 @@
                     <Label Text="Select a camera:" VerticalOptions="Center" BackgroundColor="White" TextColor="Black"/>
                     <Picker VerticalOptions="Center" TextColor="Black" ItemsSource="{Binding Cameras}" SelectedItem="{Binding Camera,Mode=TwoWay}"/>
                 </HorizontalStackLayout>
-                <HorizontalStackLayout HorizontalOptions="Center" Margin="5">
-                    <Label Text="Select a microphone:" VerticalOptions="Center" BackgroundColor="White" TextColor="Black"/>
-                    <Picker  VerticalOptions="Center" TextColor="Black" ItemsSource="{Binding Microphones}" SelectedItem="{Binding Microphone,Mode=TwoWay}"/>
-                </HorizontalStackLayout>
-                <HorizontalStackLayout HorizontalOptions="Center">
-                    <Label Text="Mirrored" VerticalOptions="Center" TextColor="Black"/>
-                    <CheckBox BindingContext="{x:Reference cameraView}" VerticalOptions="Center" Color="Black" IsChecked="{Binding MirroredImage}"/>
-                    <Label Text="Torch" VerticalOptions="Center" TextColor="Black"/>
-                    <CheckBox BindingContext="{x:Reference cameraView}" VerticalOptions="Center" Color="Black" IsChecked="{Binding TorchEnabled}"/>
-                    <Label Text="QR Detec." VerticalOptions="Center" TextColor="Black"/>
-                    <CheckBox BindingContext="{x:Reference cameraView}" VerticalOptions="Center" Color="Black" IsChecked="{Binding BarCodeDetectionEnabled}"/>
-                </HorizontalStackLayout>
                 <HorizontalStackLayout HorizontalOptions="Center">
                     <Label Text="AutoSnap freq: " VerticalOptions="Center" TextColor="Black"/>
                     <Entry WidthRequest="20" Keyboard="Numeric" TextColor="Black" Text="{Binding Seconds, Mode=TwoWay}" />
@@ -59,17 +47,9 @@
                     <Stepper BindingContext="{x:Reference cameraView}" Minimum="{Binding MinZoomFactor}" Maximum="7" Increment="0.5" Value="{Binding ZoomFactor,Mode=TwoWay}" />
                 </HorizontalStackLayout>
                 <HorizontalStackLayout HorizontalOptions="Center" Margin="5">
-                    <Button Text="Start Camera" Command="{Binding StartCamera}" />
-                    <Button Text="Stop Camera" Command="{Binding StopCamera}" />
                     <Button Text="Take Photo" Command="{Binding TakeSnapshotCmd}" />
                 </HorizontalStackLayout>
-                <HorizontalStackLayout HorizontalOptions="Center" Margin="5">
-                    <Button Text="Start Record" Command="{Binding StartRecording}" />
-                    <Button Text="Stop Record" Command="{Binding StopRecording}" />
-                </HorizontalStackLayout>
-                <Label Text="{Binding BarcodeText}" TextColor="Black" FontAttributes="Bold" HorizontalOptions="Center" />
                 <Image BindingContext="{x:Reference cameraView}" Source="{Binding SnapShot}" Aspect="AspectFit" WidthRequest="250" HeightRequest="100" HorizontalOptions="Center" />
-                <toolkit:MediaElement Source="{Binding VideoSource}" ShouldAutoPlay="False" ShouldShowPlaybackControls="True" HeightRequest="300" WidthRequest="200" />
             </VerticalStackLayout>
         </Grid>
     </ScrollView>
