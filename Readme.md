@@ -17,3 +17,7 @@ I led camera workflow testing and integration, validating image quality requirem
 #### Tech Stack
 
 C#, .NET MAUI
+
+##### Company
+
+https://www.bilimetrixusa.org/
